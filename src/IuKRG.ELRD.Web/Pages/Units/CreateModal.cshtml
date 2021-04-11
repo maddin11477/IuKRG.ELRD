@@ -1,0 +1,19 @@
+﻿@page
+@using IuKRG.ELRD.Localization
+@using IuKRG.ELRD.Web.Pages.Units
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model CreateModalModel
+@inject IStringLocalizer<ELRDResource> L
+@{
+    Layout = null;
+}
+<abp-dynamic-form abp-model="Unit" asp-page="/Units/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewUnit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>
