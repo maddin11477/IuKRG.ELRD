@@ -31,7 +31,7 @@
                                         return l('UnitDeletionConfirmationMessage', data.record.callsign);
                                     },
                                     action: function (data) {
-                                        acme.bookStore.books.book
+                                        iuKRG.eLRD.units.unit
                                             .delete(data.record.id)
                                             .then(function () {
                                                 abp.notify.info(l('SuccessfullyDeleted'));
