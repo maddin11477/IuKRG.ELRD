@@ -57,7 +57,7 @@ namespace IuKRG.ELRD.Users
 
         private AppUser()
         {
-            
+
         }
     }
 }

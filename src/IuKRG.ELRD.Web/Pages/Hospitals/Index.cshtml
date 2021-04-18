@@ -19,7 +19,7 @@
                 <abp-card-title>@L["BaseData:Hospitals"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-right">
-                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Hospitals.Create))
+                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Units.Create))
                 {
                     <abp-button id="NewHospitalButton"
                                 text="@L["BaseData:NewHospital"].Value"

@@ -1,11 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Localization;
 using IuKRG.ELRD.Localization;
 using IuKRG.ELRD.MultiTenancy;
+using IuKRG.ELRD.Permissions;
 using Volo.Abp.TenantManagement.Web.Navigation;
 using Volo.Abp.UI.Navigation;
-using IuKRG.ELRD.Permissions;
 
 namespace IuKRG.ELRD.Web.Menus
 {
@@ -31,20 +29,33 @@ namespace IuKRG.ELRD.Web.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ELRDMenus.Home, l["Menu:Home"], "~/"));
 
-            if (await context.IsGrantedAsync(ELRDPermissions.Units.Default))
-            {
-                context.Menu.AddItem(
-                    new ApplicationMenuItem(
+            var baseDataMneu = new ApplicationMenuItem(
                         "Basedata",
                         l["Menu:BaseData"],
                         icon: "fa fa-book"
-                    ).AddItem(
-                        new ApplicationMenuItem(
-                            "Basedata.Units",
-                            l["Menu:BaseUnits"],
-                            url: "/Units"
+            );
+
+            context.Menu.AddItem(baseDataMneu);
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Units.Default))
+            {
+                baseDataMneu.AddItem(
+                    new ApplicationMenuItem(
+                        "Basedata.Units",
+                        l["Menu:BaseUnits"],
+                        url: "/Units"
                         )
-                    )
+                );
+            }
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Hospitals.Default))
+            {
+                baseDataMneu.AddItem(
+                    new ApplicationMenuItem(
+                        "Basedata.Hospitals",
+                        l["Menu:BaseHospitals"],
+                        url: "/Hospitals"
+                        )
                 );
             }
         }
