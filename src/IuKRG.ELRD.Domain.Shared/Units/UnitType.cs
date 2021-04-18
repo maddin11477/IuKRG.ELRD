@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace IuKRG.ELRD.Units
+﻿namespace IuKRG.ELRD.Units
 {
     public enum UnitType
     {

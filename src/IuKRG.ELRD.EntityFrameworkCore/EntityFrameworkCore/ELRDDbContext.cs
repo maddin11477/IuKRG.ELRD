@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IuKRG.ELRD.Hospitals;
+using IuKRG.ELRD.Units;
 using IuKRG.ELRD.Users;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
-using IuKRG.ELRD.Units;
 
 namespace IuKRG.ELRD.EntityFrameworkCore
 {
@@ -26,6 +27,9 @@ namespace IuKRG.ELRD.EntityFrameworkCore
         //Stammdaten Fahrzeuge
         public DbSet<Unit> Units { get; set; }
 
+        //Stammdaten Kliniken
+        public DbSet<Hospital> Hospitals { get; set; }
+
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ELRDDbContextModelCreatingExtensions.ConfigureELRD
          */
@@ -45,7 +49,7 @@ namespace IuKRG.ELRD.EntityFrameworkCore
             builder.Entity<AppUser>(b =>
             {
                 b.ToTable(AbpIdentityDbProperties.DbTablePrefix + "Users"); //Sharing the same table "AbpUsers" with the IdentityUser
-                
+
                 b.ConfigureByConvention();
                 b.ConfigureAbpUser();
 

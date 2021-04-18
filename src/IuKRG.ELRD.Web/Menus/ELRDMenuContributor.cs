@@ -1,11 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Localization;
 using IuKRG.ELRD.Localization;
 using IuKRG.ELRD.MultiTenancy;
+using IuKRG.ELRD.Permissions;
 using Volo.Abp.TenantManagement.Web.Navigation;
 using Volo.Abp.UI.Navigation;
-using IuKRG.ELRD.Permissions;
 
 namespace IuKRG.ELRD.Web.Menus
 {
@@ -38,12 +36,17 @@ namespace IuKRG.ELRD.Web.Menus
                         "Basedata",
                         l["Menu:BaseData"],
                         icon: "fa fa-book"
-                    ).AddItem(
-                        new ApplicationMenuItem(
-                            "Basedata.Units",
-                            l["Menu:BaseUnits"],
-                            url: "/Units"
+                ).AddItem(
+                    new ApplicationMenuItem(
+                        "Basedata.Units",
+                        l["Menu:BaseUnits"],
+                        url: "/Units"
                         )
+                ).AddItem(
+                    new ApplicationMenuItem(
+                        "Basedata.Hospitals",
+                        l["Menu:BaseHospitals"],
+                        url: "/Hospitals")
                     )
                 );
             }

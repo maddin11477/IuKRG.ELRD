@@ -1,0 +1,19 @@
+﻿@page
+@using IuKRG.ELRD.Localization
+@using IuKRG.ELRD.Web.Pages.Hospitals
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<ELRDResource> L
+@section scripts
+{
+    <abp-script src="/Pages/Hospitals/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <h2>@L["Hospitals"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="HospitalsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
