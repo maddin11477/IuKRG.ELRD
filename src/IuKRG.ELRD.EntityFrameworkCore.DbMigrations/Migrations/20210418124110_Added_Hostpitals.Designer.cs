@@ -4,15 +4,17 @@ using IuKRG.ELRD.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace IuKRG.ELRD.Migrations
 {
     [DbContext(typeof(ELRDMigrationsDbContext))]
-    partial class ELRDMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210418124110_Added_Hostpitals")]
+    partial class Added_Hostpitals
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

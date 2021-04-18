@@ -5,10 +5,9 @@
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.Extensions.Localization
 @model IndexModel
-@inject IStringLocalizer<ELRDResource>
-    L
-    @inject IAuthorizationService AuthorizationService
-    @section scripts
+@inject IStringLocalizer<ELRDResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
 {
         <abp-script src="/Pages/Units/Index.js" />
     }

@@ -12,19 +12,19 @@
             columnDefs: [
                 {
                     title: l('BaseHospitals:Name'),
-                    data: "Name"
+                    data: "name"
                 },
                 {
                     title: l('BaseHospitals:City'),
-                    data: "City"
+                    data: "city"
                 },
                 {
                     title: l('BaseHospitals:Long'),
-                    data: "Long"
+                    data: "long"
                 },
                 {
                     title: l('BaseHospitals:Lat'),
-                    data: "Lat"
+                    data: "lat"
                 },
                 {
                     title: l('BaseHospitals:CreationTime'), data: "creationTime",

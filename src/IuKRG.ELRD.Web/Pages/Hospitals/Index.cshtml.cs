@@ -1,7 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace IuKRG.ELRD.Web.Pages.Hospital
+namespace IuKRG.ELRD.Web.Pages.Hospitals
 {
     public class IndexModel : PageModel
     {
