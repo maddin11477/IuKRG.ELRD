@@ -29,25 +29,33 @@ namespace IuKRG.ELRD.Web.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ELRDMenus.Home, l["Menu:Home"], "~/"));
 
-            if (await context.IsGrantedAsync(ELRDPermissions.Units.Default))
-            {
-                context.Menu.AddItem(
-                    new ApplicationMenuItem(
+            var baseDataMneu = new ApplicationMenuItem(
                         "Basedata",
                         l["Menu:BaseData"],
                         icon: "fa fa-book"
-                ).AddItem(
+            );
+
+            context.Menu.AddItem(baseDataMneu);
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Units.Default))
+            {
+                baseDataMneu.AddItem(
                     new ApplicationMenuItem(
                         "Basedata.Units",
                         l["Menu:BaseUnits"],
                         url: "/Units"
                         )
-                ).AddItem(
+                );
+            }
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Hospitals.Default))
+            {
+                baseDataMneu.AddItem(
                     new ApplicationMenuItem(
                         "Basedata.Hospitals",
                         l["Menu:BaseHospitals"],
-                        url: "/Hospitals")
-                    )
+                        url: "/Hospitals"
+                        )
                 );
             }
         }

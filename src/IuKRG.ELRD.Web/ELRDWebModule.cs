@@ -82,9 +82,15 @@ namespace IuKRG.ELRD.Web
 
             Configure<RazorPagesOptions>(options =>
             {
+                //Einheit
                 options.Conventions.AuthorizePage("/Units/Index", ELRDPermissions.Units.Default);
                 options.Conventions.AuthorizePage("/Units/CreateModal", ELRDPermissions.Units.Create);
                 options.Conventions.AuthorizePage("/Units/EditModal", ELRDPermissions.Units.Edit);
+
+                //Klinik
+                options.Conventions.AuthorizePage("/Hospitals/Index", ELRDPermissions.Hospitals.Default);
+                options.Conventions.AuthorizePage("/Hospitals/CreateModal", ELRDPermissions.Hospitals.Create);
+                options.Conventions.AuthorizePage("/Hospitals/EditModal", ELRDPermissions.Hospitals.Edit);
             });
 
         }
