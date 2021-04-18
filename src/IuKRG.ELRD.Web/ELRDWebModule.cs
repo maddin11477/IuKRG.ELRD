@@ -156,8 +156,8 @@ namespace IuKRG.ELRD.Web
         {
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Languages.Add(new LanguageInfo("en", "en", "English"));
-                options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsch", "de"));
+                options.Languages.Add(new LanguageInfo("en", "en", "English", "en"));
+                options.Languages.Add(new LanguageInfo("de", "de", "Deutsch", "de"));
             });
         }
 
