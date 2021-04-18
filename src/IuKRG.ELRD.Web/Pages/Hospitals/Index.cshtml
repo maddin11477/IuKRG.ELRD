@@ -1,0 +1,35 @@
+﻿@page
+@using IuKRG.ELRD.Localization
+@using IuKRG.ELRD.Web.Pages.Hospitals
+@using IuKRG.ELRD.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<ELRDResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+{
+        <abp-script src="/Pages/Hospitals/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["BaseData:Hospitals"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Hospitals.Create))
+                {
+                    <abp-button id="NewHospitalButton"
+                                text="@L["BaseData:NewHospital"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="HospitalsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
