@@ -4,17 +4,17 @@ using IuKRG.ELRD.Units;
 
 namespace IuKRG.ELRD
 {
+    // automapper between database and dto's
     public class ELRDApplicationAutoMapperProfile : Profile
     {
+        // master data
         public ELRDApplicationAutoMapperProfile()
         {
-            //Automapper zwischen Datenbank und DTOs
-            //Für Stammdaten
-            //Einheiten
+            // units
             CreateMap<Unit, UnitDto>();
             CreateMap<CreateUpdateUnitDto, Unit>();
 
-            //Kliniken
+            // hospitals
             CreateMap<Hospital, HospitalDto>();
             CreateMap<CreateUpdateHospitalDto, Hospital>();
         }

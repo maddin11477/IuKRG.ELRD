@@ -8,15 +8,14 @@ namespace IuKRG.ELRD.Units
 {
     public class UnitAppService :
         CrudAppService<
-            Unit,                               //Fahrzeug Entity
-            UnitDto,                            //Objekt das angezeigt wird
-            Guid,                               //Primärschlüssel
-            PagedAndSortedResultRequestDto,     //Für Seiten und Sortieren
-            CreateUpdateUnitDto>,                //Für neue oder Änderungen
+            Unit,                               // unit entity
+            UnitDto,                            // data transfer object
+            Guid,                               // primary key
+            PagedAndSortedResultRequestDto,     // display and sort object
+            CreateUpdateUnitDto>,               // add / edit object
         IUnitAppService
     {
-        public UnitAppService(IRepository<Unit, Guid> repository)
-            : base(repository)
+        public UnitAppService(IRepository<Unit, Guid> repository) : base(repository)
         {
             GetPolicyName = ELRDPermissions.Units.Default;
             GetListPolicyName = ELRDPermissions.Units.Default;

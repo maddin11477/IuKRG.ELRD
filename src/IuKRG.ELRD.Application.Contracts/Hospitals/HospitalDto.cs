@@ -3,6 +3,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace IuKRG.ELRD.Hospitals
 {
+    // data transfer object (DTO) - general
     public class HospitalDto : FullAuditedEntityDto<Guid>
     {
         public string Name { get; set; }

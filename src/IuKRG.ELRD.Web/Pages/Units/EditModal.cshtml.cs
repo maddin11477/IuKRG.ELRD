@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IuKRG.ELRD.Web.Pages.Units
 {
+    // subpage for editing existing unit
     public class EditModalModel : ELRDPageModel
     {
         [HiddenInput]

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IuKRG.ELRD.Web.Pages.Hospitals
 {
+    // subpage for creating new hospital
     public class CreateModalModel : ELRDPageModel
     {
         [BindProperty]

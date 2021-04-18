@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IuKRG.ELRD.Web.Pages.Units
 {
+    // subpage for creating new unit
     public class CreateModalModel : ELRDPageModel
     {
         [BindProperty]

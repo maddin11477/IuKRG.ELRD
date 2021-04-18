@@ -8,11 +8,11 @@ namespace IuKRG.ELRD.Hospitals
 {
     public class HospitalAppService :
         CrudAppService<
-            Hospital,
-            HospitalDto,
-            Guid,
-            PagedAndSortedResultRequestDto,
-            CreateUpdateHospitalDto>,
+            Hospital,                           // hospital entity
+            HospitalDto,                        // data transfer object
+            Guid,                               // primary key
+            PagedAndSortedResultRequestDto,     // display and sort object
+            CreateUpdateHospitalDto>,           // add / edit object
         IHospitalAppService
     {
         public HospitalAppService(IRepository<Hospital, Guid> repository) : base(repository)

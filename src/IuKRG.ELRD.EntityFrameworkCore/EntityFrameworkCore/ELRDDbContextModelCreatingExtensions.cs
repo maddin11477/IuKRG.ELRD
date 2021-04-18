@@ -14,7 +14,7 @@ namespace IuKRG.ELRD.EntityFrameworkCore
 
             /* Configure your own tables/entities inside here */
 
-            //Stammdaten Fahrzeuge
+            // master data units
             builder.Entity<Unit>(u =>
             {
                 u.ToTable(ELRDConsts.DbTablePrefix + "Units",
@@ -23,7 +23,7 @@ namespace IuKRG.ELRD.EntityFrameworkCore
                 u.Property(x => x.Callsign).IsRequired().HasMaxLength(256);
             });
 
-            //Stammdaten Kliniken
+            // master data hospitals
             builder.Entity<Hospital>(u =>
             {
                 u.ToTable(ELRDConsts.DbTablePrefix + "Hospitals",

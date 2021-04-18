@@ -5,7 +5,7 @@
         public const string GroupName = "ELRD";
 
 
-        //Eigene Klassen für Rechtesteuerung
+        // own classes for permissions
         public static class Units
         {
             public const string Default = GroupName + ".Units";

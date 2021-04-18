@@ -24,10 +24,10 @@ namespace IuKRG.ELRD.EntityFrameworkCore
     {
         public DbSet<AppUser> Users { get; set; }
 
-        //Stammdaten Fahrzeuge
+        // master data units
         public DbSet<Unit> Units { get; set; }
 
-        //Stammdaten Kliniken
+        // master data hospitals
         public DbSet<Hospital> Hospitals { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.

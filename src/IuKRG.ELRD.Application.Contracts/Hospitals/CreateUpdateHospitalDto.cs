@@ -2,6 +2,7 @@
 
 namespace IuKRG.ELRD.Hospitals
 {
+    // data transfer object (DTO) - create, edit
     public class CreateUpdateHospitalDto
     {
         [Required]

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IuKRG.ELRD.Web.Pages.Hospitals
 {
+    // subpage for editing existing hospital
     public class EditModalModel : ELRDPageModel
     {
         [HiddenInput]

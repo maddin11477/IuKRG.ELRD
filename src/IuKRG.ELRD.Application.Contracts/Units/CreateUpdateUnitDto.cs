@@ -2,6 +2,7 @@
 
 namespace IuKRG.ELRD.Units
 {
+    // data transfer object (DTO) - create, edit
     public class CreateUpdateUnitDto
     {
         [Required]
