@@ -140,7 +140,7 @@ namespace IuKRG.ELRD.Data
                 fileName = "cmd.exe";
             }
 
-            var procStartInfo = new ProcessStartInfo( fileName,
+            var procStartInfo = new ProcessStartInfo(fileName,
                 $"{argumentPrefix} \"abp create-migration-and-run-migrator \"{GetDbMigrationsProjectFolderPath()}\"\""
             );
 

@@ -1,6 +1,6 @@
 ﻿@page
 @using IuKRG.ELRD.Localization
-@using IuKRG.ELRD.Web.Pages.Units
+@using IuKRG.ELRD.Web.Pages.Hospitals
 @using IuKRG.ELRD.Permissions
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.Extensions.Localization
@@ -9,20 +9,20 @@
 @inject IAuthorizationService AuthorizationService
 @section scripts
 {
-        <abp-script src="/Pages/Units/Index.js" />
+        <abp-script src="/Pages/Hospitals/Index.js" />
 }
 
 <abp-card>
     <abp-card-header>
         <abp-row>
             <abp-column size-md="_6">
-                <abp-card-title>@L["BaseData:Units"]</abp-card-title>
+                <abp-card-title>@L["BaseData:Hospitals"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-right">
                 @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Units.Create))
                 {
-                    <abp-button id="NewUnitButton"
-                                text="@L["BaseData:NewUnit"].Value"
+                    <abp-button id="NewHospitalButton"
+                                text="@L["BaseData:NewHospital"].Value"
                                 icon="plus"
                                 button-type="Primary" />
                 }
@@ -30,6 +30,6 @@
         </abp-row>
     </abp-card-header>
     <abp-card-body>
-        <abp-table striped-rows="true" id="UnitsTable"></abp-table>
+        <abp-table striped-rows="true" id="HospitalsTable"></abp-table>
     </abp-card-body>
 </abp-card>

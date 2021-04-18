@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using IuKRG.ELRD.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using IuKRG.ELRD.Data;
 using Volo.Abp.DependencyInjection;
 
 namespace IuKRG.ELRD.EntityFrameworkCore

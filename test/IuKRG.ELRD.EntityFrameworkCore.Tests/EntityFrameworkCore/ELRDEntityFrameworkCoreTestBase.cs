@@ -1,8 +1,6 @@
-﻿using Volo.Abp;
-
-namespace IuKRG.ELRD.EntityFrameworkCore
+﻿namespace IuKRG.ELRD.EntityFrameworkCore
 {
-    public abstract class ELRDEntityFrameworkCoreTestBase : ELRDTestBase<ELRDEntityFrameworkCoreTestModule> 
+    public abstract class ELRDEntityFrameworkCoreTestBase : ELRDTestBase<ELRDEntityFrameworkCoreTestModule>
     {
 
     }

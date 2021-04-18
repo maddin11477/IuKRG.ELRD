@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using IuKRG.ELRD.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using IuKRG.ELRD.Data;
 using Serilog;
 using Volo.Abp;
 
