@@ -1,5 +1,6 @@
-﻿using IuKRG.ELRD.Hospitals;
-using IuKRG.ELRD.Units;
+﻿using IuKRG.ELRD.Units;
+using IuKRG.ELRD.Hospitals;
+using IuKRG.ELRD.Diagnoses;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -14,22 +15,30 @@ namespace IuKRG.ELRD.EntityFrameworkCore
 
             /* Configure your own tables/entities inside here */
 
-            // master data units
+            // basedata units
             builder.Entity<Unit>(u =>
             {
                 u.ToTable(ELRDConsts.DbTablePrefix + "Units",
                           ELRDConsts.DbSchema);
-                u.ConfigureByConvention(); //auto configure for the base class props
+                u.ConfigureByConvention(); // auto configure for the base class props
                 u.Property(x => x.Callsign).IsRequired().HasMaxLength(256);
             });
 
-            // master data hospitals
+            // basedata hospitals
             builder.Entity<Hospital>(u =>
             {
                 u.ToTable(ELRDConsts.DbTablePrefix + "Hospitals",
                           ELRDConsts.DbSchema);
-                u.ConfigureByConvention(); //auto configure for the base class props
+                u.ConfigureByConvention(); // auto configure for the base class props
                 u.Property(x => x.Name).IsRequired().HasMaxLength(256);
+            });
+
+            // basedata diagnoses
+            builder.Entity<Diagnosis>(u =>
+            {
+                u.ToTable(ELRDConsts.DbTablePrefix + "Diagnoses",
+                          ELRDConsts.DbSchema);
+                u.ConfigureByConvention(); // auto configure for the base class props
             });
         }
     }

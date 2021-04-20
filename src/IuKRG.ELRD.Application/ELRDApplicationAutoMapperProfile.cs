@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using IuKRG.ELRD.Hospitals;
 using IuKRG.ELRD.Units;
+using IuKRG.ELRD.Hospitals;
+using IuKRG.ELRD.Diagnoses;
 
 namespace IuKRG.ELRD
 {
@@ -17,6 +18,10 @@ namespace IuKRG.ELRD
             // hospitals
             CreateMap<Hospital, HospitalDto>();
             CreateMap<CreateUpdateHospitalDto, Hospital>();
+
+            // diagnoses
+            CreateMap<Diagnosis, DiagnosisDto>();
+            CreateMap<CreateUpdateDiagnosisDto, Diagnosis>();
         }
     }
 }

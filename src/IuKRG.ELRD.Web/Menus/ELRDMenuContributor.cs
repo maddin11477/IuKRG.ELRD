@@ -58,6 +58,17 @@ namespace IuKRG.ELRD.Web.Menus
                         )
                 );
             }
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Diagnoses.Default))
+            {
+                baseDataMneu.AddItem(
+                    new ApplicationMenuItem(
+                        "Basedata.Diagnoses",
+                        l["Menu:BaseDiagnoses"],
+                        url: "/Diagnoses"
+                        )
+                );
+            }
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿@page
+@using IuKRG.ELRD.Localization
+@using IuKRG.ELRD.Web.Pages.Diagnoses
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model EditModalModel
+@inject IStringLocalizer<ELRDResource> L
+@{
+    Layout = null;
+}
+
+<!-- subpage for editing existing diagnosis -->
+<abp-dynamic-form abp-model="Diagnosis" asp-page="/Diagnoses/EditModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Id" />
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

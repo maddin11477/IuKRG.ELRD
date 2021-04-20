@@ -7,6 +7,7 @@
         "Menu:BaseData": "Stammdaten",
         "Menu:BaseUnits": "Fahrzeuge",
         "Menu:BaseHospitals": "Kliniken",
+        "Menu:BaseDiagnoses": "Diagnosen",
         "Enum:UnitType:0": "RTW",
         "Enum:UnitType:1": "KTW",
         "Enum:UnitType:2": "NEF",
@@ -30,6 +31,10 @@
         "Permission:Hospitals.Create": "Erstellen von Kliniken",
         "Permission:Hospitals.Edit": "Bearbeiten von Kliniken",
         "Permission:Hospitals.Delete": "Löschen von Kliniken",
+        "Permission:Diagnoses": "Stammdaten Diagnosen",
+        "Permission:Diagnoses.Create": "Erstellen von Diagnosen",
+        "Permission:Diagnoses.Edit": "Bearbeiten von Diagnosen",
+        "Permission:Diagnoses.Delete": "Löschen von Diagnosen",
         "BaseData:Units": "Stammdaten Einheiten",
         "BaseData:NewUnit": "Neue Einheit",
         "NewUnit": "neue Einheit anlegen",
@@ -46,6 +51,14 @@
         "BaseHospitals:City": "Stadt",
         "BaseHospitals:Long": "Longitude",
         "BaseHospitals:Lat": "Latitude",
-        "BaseHospitals:CreationTime": "Erstellt am"
+        "BaseHospitals:CreationTime": "Erstellt am",
+        "BaseData:Diagnoses": "Stammdaten Diagnosen",
+        "BaseData:NewDiagnosis": "Neue Diagnose",
+        "NewDiagnosis": "neue Diagnose anlegen",
+        "BaseDiagnoses:Actions": "Aktionen",
+        "BaseDiagnoses:Category": "Kategorie",
+        "BaseDiagnoses:Injury": "Diagnose",
+        "BaseDiagnoses:Location": "Örtlichkeit",
+        "BaseDiagnoses:CreationTime": "Erstellt am"
     }
 }

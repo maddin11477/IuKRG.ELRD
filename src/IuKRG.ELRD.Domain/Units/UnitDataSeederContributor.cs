@@ -17,12 +17,12 @@ namespace IuKRG.ELRD.Units
         }
 
 
-        //Hier können Daten bei dem ersten Start hinzugefügt werden
+        // fill database with entries at first startup
         public async Task SeedAsync(DataSeedContext context)
         {
             if (await _unitRepository.GetCountAsync() <= 0)
             {
-                //RTWs befüllen
+                // fill RTWs
                 string[] rtws = { "RK BISHM 71/1", "RK BISHM 71/70", "RK BKOHN 71/1", "RK BKOHN 71/70", "RK BNEST 71/1", "RK BNEST 71/2", "RK BNEST 71/3", "RK BNEST 71/70", "RK LALEI 71/1", "RK MELST 71/70", "RK NHM 71/1" };
                 foreach (string x in rtws)
                 {
@@ -37,7 +37,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //KTWs befüllen
+                // fill KTWs
                 string[] ktws = { "RK BNEST 72/1", "RK BNEST 72/2", "RK BKOHN 72/70", "JO MELST 72/1", "JO MELST 72/2", "JO MELST 72/3" };
                 foreach (string x in ktws)
                 {
@@ -52,7 +52,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //NEFs befüllen
+                // fill NEFs
                 string[] nefs = { "RK BISHM 76/1", "RK BKOHN 76/1", "RK BNEST 76/1", "RK MELST 76/1" };
                 foreach (string x in nefs)
                 {
@@ -67,7 +67,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //RTHs befüllen
+                // fill RTHs
                 string[] rths = { "Christoph 18", "Christoph 28", "Christoph 60", "Christoph 2", "Christoph 20", "Christoph Nürnberg", "Christoph Thüringen", "Christoph Mittelhessen", "Christoph Gießen" };
                 foreach (string x in rths)
                 {
@@ -82,7 +82,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //KRADs befüllen
+                // fill KRADs
                 string[] krads = { "RK NES 17/1", "RK NES 17/2" };
                 foreach (string x in krads)
                 {
@@ -97,7 +97,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //KDOWs befüllen
+                // fill KDOWs
                 string[] kdows = { "RK BNEST 10/1", "RK BNEST 10/2", "RK BNEST 10/3" };
                 foreach (string x in kdows)
                 {
@@ -112,7 +112,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //Sonsigte befüllen
+                // fill others
                 string[] divers = { "RK BNEST 74/1", "RK BNEST 59/1" };
                 foreach (string x in divers)
                 {
@@ -127,7 +127,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //MTWs befüllen
+                // fill MTWs
                 string[] mtws = { "RK BISHM 14/1", "RK BNEST 11/2", "RK BNEST 14/1", "RK BNEST 14/10" };
                 foreach (string x in mtws)
                 {
@@ -142,7 +142,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //LKWs befüllen
+                // fill LKWs
                 string[] lkws = { "RK BNEST 54/1", "RK BISHM 56/1" };
                 foreach (string x in lkws)
                 {
@@ -157,7 +157,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //KTWSKATS befüllen
+                // fill KTWSKATS
                 string[] kats = { "RK BNEST 73/1", "RK MELST 73/10" };
                 foreach (string x in kats)
                 {
@@ -172,7 +172,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //Wasserwacht befüllen
+                // fill Wasserwacht
                 string[] wasserwacht = { "WW BNEST 91/1", "WW WÜHSN 94/1" };
                 foreach (string x in wasserwacht)
                 {
@@ -187,7 +187,7 @@ namespace IuKRG.ELRD.Units
                     );
                 }
 
-                //ELWs befüllen
+                // fill ELWs
                 string[] elws = { "KAT NES 13/2" };
                 foreach (string x in elws)
                 {

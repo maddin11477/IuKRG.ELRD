@@ -1,5 +1,6 @@
-﻿using IuKRG.ELRD.Hospitals;
-using IuKRG.ELRD.Units;
+﻿using IuKRG.ELRD.Units;
+using IuKRG.ELRD.Hospitals;
+using IuKRG.ELRD.Diagnoses;
 using IuKRG.ELRD.Users;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -24,11 +25,14 @@ namespace IuKRG.ELRD.EntityFrameworkCore
     {
         public DbSet<AppUser> Users { get; set; }
 
-        // master data units
+        // basedata units
         public DbSet<Unit> Units { get; set; }
 
-        // master data hospitals
+        // basedata hospitals
         public DbSet<Hospital> Hospitals { get; set; }
+
+        // basedata diagnoses
+        public DbSet<Diagnosis> Diagnoses { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ELRDDbContextModelCreatingExtensions.ConfigureELRD

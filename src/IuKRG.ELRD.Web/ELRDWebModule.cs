@@ -92,6 +92,11 @@ namespace IuKRG.ELRD.Web
                 options.Conventions.AuthorizePage("/Hospitals/Index", ELRDPermissions.Hospitals.Default);
                 options.Conventions.AuthorizePage("/Hospitals/CreateModal", ELRDPermissions.Hospitals.Create);
                 options.Conventions.AuthorizePage("/Hospitals/EditModal", ELRDPermissions.Hospitals.Edit);
+
+                // diagnosis
+                options.Conventions.AuthorizePage("/Diagnoses/Index", ELRDPermissions.Diagnoses.Default);
+                options.Conventions.AuthorizePage("/Diagnoses/CreateModal", ELRDPermissions.Diagnoses.Create);
+                options.Conventions.AuthorizePage("/Diagnoses/EditModal", ELRDPermissions.Diagnoses.Edit);
             });
 
         }
