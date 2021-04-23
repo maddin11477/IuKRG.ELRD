@@ -17,11 +17,9 @@ namespace IuKRG.ELRD.Units
     {
         public UnitAppService(IRepository<Unit, Guid> repository) : base(repository)
         {
-            GetPolicyName = ELRDPermissions.Units.Default;
-            GetListPolicyName = ELRDPermissions.Units.Default;
-            CreatePolicyName = ELRDPermissions.Units.Create;
-            UpdatePolicyName = ELRDPermissions.Units.Edit;
-            DeletePolicyName = ELRDPermissions.Units.Delete;
+            GetPolicyName = ELRDPermissions.Basedata.Default;
+            CreatePolicyName = ELRDPermissions.Basedata.UnitCU;
+            DeletePolicyName = ELRDPermissions.Basedata.UnitD;
         }
     }
 }

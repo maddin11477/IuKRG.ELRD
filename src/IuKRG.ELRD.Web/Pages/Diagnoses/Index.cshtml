@@ -20,7 +20,7 @@
                 <abp-card-title>@L["BaseData:Diagnoses"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-right">
-                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Diagnoses.Create))
+                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Basedata.DiagnosisCU))
                 {
                     <abp-button id="NewDiagnosisButton"
                                 text="@L["BaseData:NewDiagnosis"].Value"

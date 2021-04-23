@@ -19,14 +19,14 @@
                             [
                                 {
                                     text: l('Edit'),
-                                    visible: abp.auth.isGranted('ELRD.Hospitals.Edit'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.HospitalCU'),
                                     action: function (data) {
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
-                                    visible: abp.auth.isGranted('ELRD.Hospitals.Delete'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.HospitalD'),
                                     confirmMessage: function (data) {
                                         return l('HospitalDeletionConfirmationMessage', data.record.callsign);
                                     },

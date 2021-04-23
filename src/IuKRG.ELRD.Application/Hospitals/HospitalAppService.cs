@@ -17,11 +17,9 @@ namespace IuKRG.ELRD.Hospitals
     {
         public HospitalAppService(IRepository<Hospital, Guid> repository) : base(repository)
         {
-            GetPolicyName = ELRDPermissions.Hospitals.Default;
-            GetListPolicyName = ELRDPermissions.Hospitals.Default;
-            CreatePolicyName = ELRDPermissions.Hospitals.Create;
-            UpdatePolicyName = ELRDPermissions.Hospitals.Edit;
-            DeletePolicyName = ELRDPermissions.Hospitals.Delete;
+            GetPolicyName = ELRDPermissions.Basedata.Default;
+            CreatePolicyName = ELRDPermissions.Basedata.HospitalCU;
+            DeletePolicyName = ELRDPermissions.Basedata.HospitalD;
         }
     }
 }

@@ -19,14 +19,14 @@
                             [
                                 {
                                     text: l('Edit'),
-                                    visible: abp.auth.isGranted('ELRD.Units.Edit'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.UnitCU'),
                                     action: function (data) {
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
-                                    visible: abp.auth.isGranted('ELRD.Units.Delete'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.UnitD'),
                                     confirmMessage: function (data) {
                                         return l('UnitDeletionConfirmationMessage', data.record.callsign);
                                     },

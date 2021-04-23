@@ -17,11 +17,9 @@ namespace IuKRG.ELRD.Diagnoses
     {
         public DiagnosisAppService(IRepository<Diagnosis, Guid> repository) : base(repository)
         {
-            GetPolicyName = ELRDPermissions.Diagnoses.Default;
-            GetListPolicyName = ELRDPermissions.Diagnoses.Default;
-            CreatePolicyName = ELRDPermissions.Diagnoses.Create;
-            UpdatePolicyName = ELRDPermissions.Diagnoses.Edit;
-            DeletePolicyName = ELRDPermissions.Diagnoses.Delete;
+            GetPolicyName = ELRDPermissions.Basedata.Default;
+            CreatePolicyName = ELRDPermissions.Basedata.DiagnosisCU;
+            DeletePolicyName = ELRDPermissions.Basedata.DiagnosisD;
         }
     }
 }

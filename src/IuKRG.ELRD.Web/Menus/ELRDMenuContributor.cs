@@ -37,7 +37,7 @@ namespace IuKRG.ELRD.Web.Menus
 
             context.Menu.AddItem(baseDataMneu);
 
-            if (await context.IsGrantedAsync(ELRDPermissions.Units.Default))
+            if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
                 baseDataMneu.AddItem(
                     new ApplicationMenuItem(
@@ -48,7 +48,7 @@ namespace IuKRG.ELRD.Web.Menus
                 );
             }
 
-            if (await context.IsGrantedAsync(ELRDPermissions.Hospitals.Default))
+            if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
                 baseDataMneu.AddItem(
                     new ApplicationMenuItem(
@@ -59,7 +59,7 @@ namespace IuKRG.ELRD.Web.Menus
                 );
             }
 
-            if (await context.IsGrantedAsync(ELRDPermissions.Diagnoses.Default))
+            if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
                 baseDataMneu.AddItem(
                     new ApplicationMenuItem(

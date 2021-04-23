@@ -19,14 +19,14 @@
                             [
                                 {
                                     text: l('Edit'),
-                                    visible: abp.auth.isGranted('ELRD.Diagnoses.Edit'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.DiagnosisCU'),
                                     action: function (data) {
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
-                                    visible: abp.auth.isGranted('ELRD.Diagnoses.Delete'),
+                                    visible: abp.auth.isGranted('ELRD.Basedata.DiagnosisD'),
                                     confirmMessage: function (data) {
                                         return l('DiagnosisDeletionConfirmationMessage', data.record.callsign);
                                     },

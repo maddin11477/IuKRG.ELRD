@@ -20,7 +20,7 @@
                 <abp-card-title>@L["BaseData:Units"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-right">
-                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Units.Create))
+                @if (await AuthorizationService.IsGrantedAsync(ELRDPermissions.Basedata.UnitCU))
                 {
                     <abp-button id="NewUnitButton"
                                 text="@L["BaseData:NewUnit"].Value"

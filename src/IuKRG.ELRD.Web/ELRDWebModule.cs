@@ -84,19 +84,19 @@ namespace IuKRG.ELRD.Web
             Configure<RazorPagesOptions>(options =>
             {
                 // unit
-                options.Conventions.AuthorizePage("/Units/Index", ELRDPermissions.Units.Default);
-                options.Conventions.AuthorizePage("/Units/CreateModal", ELRDPermissions.Units.Create);
-                options.Conventions.AuthorizePage("/Units/EditModal", ELRDPermissions.Units.Edit);
+                options.Conventions.AuthorizePage("/Units/Index", ELRDPermissions.Basedata.Default);
+                options.Conventions.AuthorizePage("/Units/CreateModal", ELRDPermissions.Basedata.UnitCU);
+                options.Conventions.AuthorizePage("/Units/EditModal", ELRDPermissions.Basedata.UnitCU);
 
                 // hospital
-                options.Conventions.AuthorizePage("/Hospitals/Index", ELRDPermissions.Hospitals.Default);
-                options.Conventions.AuthorizePage("/Hospitals/CreateModal", ELRDPermissions.Hospitals.Create);
-                options.Conventions.AuthorizePage("/Hospitals/EditModal", ELRDPermissions.Hospitals.Edit);
+                options.Conventions.AuthorizePage("/Hospitals/Index", ELRDPermissions.Basedata.Default);
+                options.Conventions.AuthorizePage("/Hospitals/CreateModal", ELRDPermissions.Basedata.HospitalCU);
+                options.Conventions.AuthorizePage("/Hospitals/EditModal", ELRDPermissions.Basedata.HospitalCU);
 
                 // diagnosis
-                options.Conventions.AuthorizePage("/Diagnoses/Index", ELRDPermissions.Diagnoses.Default);
-                options.Conventions.AuthorizePage("/Diagnoses/CreateModal", ELRDPermissions.Diagnoses.Create);
-                options.Conventions.AuthorizePage("/Diagnoses/EditModal", ELRDPermissions.Diagnoses.Edit);
+                options.Conventions.AuthorizePage("/Diagnoses/Index", ELRDPermissions.Basedata.Default);
+                options.Conventions.AuthorizePage("/Diagnoses/CreateModal", ELRDPermissions.Basedata.DiagnosisCU);
+                options.Conventions.AuthorizePage("/Diagnoses/EditModal", ELRDPermissions.Basedata.DiagnosisCU);
             });
 
         }

@@ -6,28 +6,15 @@
 
 
         // own classes for permissions
-        public static class Units
+        public static class Basedata
         {
-            public const string Default = GroupName + ".Units";
-            public const string Create = Default + ".Create";
-            public const string Edit = Default + ".Edit";
-            public const string Delete = Default + ".Delete";
-        }
-
-        public static class Hospitals
-        {
-            public const string Default = GroupName + ".Hospitals";
-            public const string Create = Default + ".Create";
-            public const string Edit = Default + ".Edit";
-            public const string Delete = Default + ".Delete";
-        }
-
-        public static class Diagnoses
-        {
-            public const string Default = GroupName + ".Diagnoses";
-            public const string Create = Default + ".Create";
-            public const string Edit = Default + ".Edit";
-            public const string Delete = Default + ".Delete";
+            public const string Default = GroupName + ".Basedata";
+            public const string UnitCU = Default + ".UnitCU";
+            public const string UnitD = Default + ".UnitD";
+            public const string HospitalCU = Default + ".HospitalCU";
+            public const string HospitalD = Default + ".HospitalD";
+            public const string DiagnosisCU = Default + ".DiagnosisCU";
+            public const string DiagnosisD = Default + ".DiagnosisD";
         }
     }
 }
