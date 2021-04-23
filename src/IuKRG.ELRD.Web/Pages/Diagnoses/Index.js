@@ -28,13 +28,13 @@
                                     text: l('Delete'),
                                     visible: abp.auth.isGranted('ELRD.Basedata.DiagnosisD'),
                                     confirmMessage: function (data) {
-                                        return l('DiagnosisDeletionConfirmationMessage', data.record.callsign);
+                                        return l('DiagnosisDeletionConfirmationMessage', data.record.injury);
                                     },
                                     action: function (data) {
                                         iuKRG.eLRD.diagnoses.diagnosis
                                             .delete(data.record.id)
                                             .then(function () {
-                                                abp.notify.info(l('SuccessfullyDeleted'));
+                                                abp.notify.success(l('SuccessfullyDeleted', data.record.injury));
                                                 dataTable.ajax.reload();
                                             });
                                     }
@@ -70,10 +70,12 @@
 
     createModal.onResult(function () {
         dataTable.ajax.reload();
+        abp.notify.success(l('SuccessfullyCreated'));
     });
 
     editModal.onResult(function () {
         dataTable.ajax.reload();
+        abp.notify.success(l('SuccessfullyEdited'));
     });
 
     $('#NewDiagnosisButton').click(function (e) {

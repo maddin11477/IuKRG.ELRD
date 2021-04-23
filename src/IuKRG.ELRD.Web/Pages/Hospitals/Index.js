@@ -28,13 +28,13 @@
                                     text: l('Delete'),
                                     visible: abp.auth.isGranted('ELRD.Basedata.HospitalD'),
                                     confirmMessage: function (data) {
-                                        return l('HospitalDeletionConfirmationMessage', data.record.callsign);
+                                        return l('HospitalDeletionConfirmationMessage', data.record.name);
                                     },
                                     action: function (data) {
                                         iuKRG.eLRD.hospitals.hospital
                                             .delete(data.record.id)
                                             .then(function () {
-                                                abp.notify.info(l('SuccessfullyDeleted'));
+                                                abp.notify.success(l('SuccessfullyDeleted', data.record.name));
                                                 dataTable.ajax.reload();
                                             });
                                     }
@@ -74,10 +74,12 @@
 
     createModal.onResult(function () {
         dataTable.ajax.reload();
+        abp.notify.success(l('SuccessfullyCreated'));
     });
 
     editModal.onResult(function () {
         dataTable.ajax.reload();
+        abp.notify.success(l('SuccessfullyEdited'));
     });
 
     $('#NewHospitalButton').click(function (e) {
