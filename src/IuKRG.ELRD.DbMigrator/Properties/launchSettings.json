@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "IuKRG.ELRD.DbMigrator": {
+      "commandName": "Project"
+    },
+    "Development": {
+      "commandName": "Executable",
+      "environmentVariables": {
+        "ENVRIONMENT": "Development"
+      }
+    }
+  }
+}

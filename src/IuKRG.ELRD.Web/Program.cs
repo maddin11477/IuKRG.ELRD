@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
@@ -44,10 +45,44 @@ namespace IuKRG.ELRD.Web
 
         internal static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                // Clear existing configuration
+                config.Sources.Clear();
+
+                /* Order of precedence is
+                    1) appsettings.json file
+                    2) appsettings.{ env.EnvironmentName}.json file
+                    3) The local User Secrets File #Only in local development environment
+                    4) Environment Variables
+                    5) Command Line Arguments 
+                */
+
+                // Get environment value from launch settings
+                var env = hostingContext.HostingEnvironment;
+                Log.Information($"Current Hosting Environment : {env.EnvironmentName}");
+                // Add json file to ASP.NET Core configuration API
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                      .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+                // Add Environment Variables
+                config.AddEnvironmentVariables();
+                // Add Command Line Arguments
+                if (args != null)
+                {
+                    config.AddCommandLine(args);
+                }
+            })
+
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 })
+#region
+#if DEBUG
+                .UseEnvironment(environment: "Development")
+#endif
+        #endregion
+
                 .UseAutofac()
                 .UseSerilog();
     }
