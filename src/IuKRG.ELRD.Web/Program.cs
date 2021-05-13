@@ -66,6 +66,7 @@ namespace IuKRG.ELRD.Web
                       .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                 // Add Environment Variables
                 config.AddEnvironmentVariables();
+                
                 // Add Command Line Arguments
                 if (args != null)
                 {

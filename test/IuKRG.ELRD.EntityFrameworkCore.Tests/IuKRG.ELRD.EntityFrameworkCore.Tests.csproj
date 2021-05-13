@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\IuKRG.ELRD.EntityFrameworkCore.DbMigrations\IuKRG.ELRD.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\IuKRG.ELRD.TestBase\IuKRG.ELRD.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
