@@ -8,6 +8,7 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
+using IuKRG.ELRD.Missions;
 
 namespace IuKRG.ELRD.EntityFrameworkCore
 {
@@ -33,6 +34,9 @@ namespace IuKRG.ELRD.EntityFrameworkCore
 
         // basedata diagnoses
         public DbSet<Diagnosis> Diagnoses { get; set; }
+
+        //missions
+        public DbSet<Mission> Missions { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ELRDDbContextModelCreatingExtensions.ConfigureELRD

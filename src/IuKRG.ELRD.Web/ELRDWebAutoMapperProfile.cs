@@ -2,6 +2,7 @@
 using IuKRG.ELRD.Units;
 using IuKRG.ELRD.Hospitals;
 using IuKRG.ELRD.Diagnoses;
+using IuKRG.ELRD.Missions;
 
 namespace IuKRG.ELRD.Web
 {
@@ -12,6 +13,7 @@ namespace IuKRG.ELRD.Web
             CreateMap<UnitDto, CreateUpdateUnitDto>();
             CreateMap<HospitalDto, CreateUpdateHospitalDto>();
             CreateMap<DiagnosisDto, CreateUpdateDiagnosisDto>();
+            CreateMap<MissionDto, CreateUpdateMissionDto>();
         }
     }
 }

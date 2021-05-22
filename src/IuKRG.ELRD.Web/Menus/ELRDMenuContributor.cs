@@ -29,17 +29,17 @@ namespace IuKRG.ELRD.Web.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ELRDMenus.Home, l["Menu:Home"], "~/"));
 
-            var baseDataMneu = new ApplicationMenuItem(
+            var baseDataMenu = new ApplicationMenuItem(
                         "Basedata",
                         l["Menu:BaseData"],
                         icon: "fa fa-book"
             );
 
-            context.Menu.AddItem(baseDataMneu);
+            context.Menu.AddItem(baseDataMenu);
 
             if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
-                baseDataMneu.AddItem(
+                baseDataMenu.AddItem(
                     new ApplicationMenuItem(
                         "Basedata.Units",
                         l["Menu:BaseUnits"],
@@ -50,7 +50,7 @@ namespace IuKRG.ELRD.Web.Menus
 
             if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
-                baseDataMneu.AddItem(
+                baseDataMenu.AddItem(
                     new ApplicationMenuItem(
                         "Basedata.Hospitals",
                         l["Menu:BaseHospitals"],
@@ -61,13 +61,28 @@ namespace IuKRG.ELRD.Web.Menus
 
             if (await context.IsGrantedAsync(ELRDPermissions.Basedata.Default))
             {
-                baseDataMneu.AddItem(
+                baseDataMenu.AddItem(
                     new ApplicationMenuItem(
                         "Basedata.Diagnoses",
                         l["Menu:BaseDiagnoses"],
                         url: "/Diagnoses"
                         )
                 );
+            }
+
+
+            //Mission Menu Generation
+
+            var MissionMenu = new ApplicationMenuItem(
+                            "Mission",
+                            l["Menu:Mission"],
+                            icon: "fa fa-ambulance",
+                            url: "/Missions"
+            );
+
+            if (await context.IsGrantedAsync(ELRDPermissions.Mission.Default))
+            {
+                context.Menu.AddItem(MissionMenu);
             }
         }
     }

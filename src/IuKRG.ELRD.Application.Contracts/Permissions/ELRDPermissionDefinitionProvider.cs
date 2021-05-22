@@ -19,6 +19,12 @@ namespace IuKRG.ELRD.Permissions
             basDataPermission.AddChild(ELRDPermissions.Basedata.HospitalD, L("Permission:Basedata.HospitalD"));
             basDataPermission.AddChild(ELRDPermissions.Basedata.DiagnosisCU, L("Permission:Basedata.DiagnosisCU"));
             basDataPermission.AddChild(ELRDPermissions.Basedata.DiagnosisD, L("Permission:Basedata.DiagnosisD"));
+
+            // Mission
+            var missionPermission = elrdGroup.AddPermission(ELRDPermissions.Mission.Default, L("Permission:Mission"));
+            missionPermission.AddChild(ELRDPermissions.Mission.CreateUpdate, L("Permission:Mission.CreateUpdate"));
+            missionPermission.AddChild(ELRDPermissions.Mission.Delete, L("Permission:Mission.Delete"));
+            missionPermission.AddChild(ELRDPermissions.Mission.Read, L("Permission:Mission.Read"));
         }
 
         private static LocalizableString L(string name)

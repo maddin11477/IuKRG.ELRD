@@ -2,6 +2,7 @@
 using IuKRG.ELRD.Units;
 using IuKRG.ELRD.Hospitals;
 using IuKRG.ELRD.Diagnoses;
+using IuKRG.ELRD.Missions;
 
 namespace IuKRG.ELRD
 {
@@ -22,6 +23,10 @@ namespace IuKRG.ELRD
             // diagnoses
             CreateMap<Diagnosis, DiagnosisDto>();
             CreateMap<CreateUpdateDiagnosisDto, Diagnosis>();
+
+            //missions
+            CreateMap<Mission, MissionDto>();
+            CreateMap<CreateUpdateMissionDto, Mission>();
         }
     }
 }

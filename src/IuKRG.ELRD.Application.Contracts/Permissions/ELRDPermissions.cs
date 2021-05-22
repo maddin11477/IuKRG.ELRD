@@ -16,5 +16,15 @@
             public const string DiagnosisCU = Default + ".DiagnosisCU";
             public const string DiagnosisD = Default + ".DiagnosisD";
         }
+
+
+        //permission for all mission related topics
+        public static class Mission
+        {
+            public const string Default = GroupName + ".Mission";
+            public const string Read = Default + ".Read";
+            public const string CreateUpdate = Default + ".CreateUpdate";
+            public const string Delete = Default + ".Delete";
+        }
     }
 }

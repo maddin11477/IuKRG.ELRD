@@ -4,6 +4,7 @@ using IuKRG.ELRD.Diagnoses;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
+using IuKRG.ELRD.Missions;
 
 namespace IuKRG.ELRD.EntityFrameworkCore
 {
@@ -39,6 +40,15 @@ namespace IuKRG.ELRD.EntityFrameworkCore
                 u.ToTable(ELRDConsts.DbTablePrefix + "Diagnoses",
                           ELRDConsts.DbSchema);
                 u.ConfigureByConvention(); // auto configure for the base class props
+            });
+
+            //Mission builder
+            builder.Entity<Mission>(u =>
+            {
+                u.ToTable(ELRDConsts.DbTablePrefix + "Missions",
+                          ELRDConsts.DbSchema);
+                u.ConfigureByConvention();
+
             });
         }
     }
