@@ -101,14 +101,17 @@
         })
     );
 
-    //Hier ist noch ein Problem mit dem Async Call der GUID-Username Auflösung. 
-    //Ich habe noch keine Ahnung wie das in JS gemacht wird..
+    //This needs to go to the server side... with hunderts of missions, this might be a performance problem
     function lookUpUserName(data, type, row, meta) {
-        return volo.abp.identity.identityUser.get(data).done(
-            function (result) {
-                username = result.name;
-            }
-        );     
+        let name = null;
+        abp.ajax({
+            type: 'GET',
+            async: false,
+            url: '/api/identity/users/' + data, //here is GUID data
+        }).done(function (result) {
+            name = result.name
+        });
+        return name   
     }
 
     createModal.onResult(function () {
